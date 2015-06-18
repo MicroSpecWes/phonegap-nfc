@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+           id="com.microspec.nfc"
+      version="0.0.1">
+    <name>NFC Plugin</name>
+    <description>Sample PhoneGap Calendar Plugin</description>
+    <license>Apache</license>
+    <keywords>phonegap,nfc</keywords>
+ 
+ 
+    <js-module src="www/nfcPlugin.js" name="NFCPlugin">
+        <clobbers target="window.nfc" />
+    </js-module>
+ 
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="NFCPlugin">
+                <param name="android-package" value="com.microspec.nfc.NFCPlugin"/>
+            </feature>
+        </config-file>
+ 
+        <source-file src="src/NFCPlugin.java" target-dir="src/com/microspec/nfc" />      
+     </platform>          
+</plugin>
